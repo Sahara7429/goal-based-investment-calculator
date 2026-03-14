@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       sip,
       timeline,
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Calculation failed" },
       { status: 500 }
