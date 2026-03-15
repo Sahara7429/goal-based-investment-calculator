@@ -17,17 +17,21 @@ export async function POST(request: Request) {
 
     for (let year = 1; year <= years; year++) {
       const monthsElapsed = year * 12;
+
       const value =
         sip *
         ((Math.pow(1 + monthlyRate, monthsElapsed) - 1) / monthlyRate) *
         (1 + monthlyRate);
 
-      timeline.push({ year, value });
+      timeline.push({
+        year,
+        value: Number(value.toFixed(2)),
+      });
     }
 
     return NextResponse.json({
-      futureValue,
-      sip,
+      futureValue: Number(futureValue.toFixed(2)),
+      sip: Number(sip.toFixed(2)),
       timeline,
     });
   } catch {
