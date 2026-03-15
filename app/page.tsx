@@ -11,6 +11,18 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+type TimelineItem = {
+  year: number;
+  value: number;
+};
+
+type HistoryItem = {
+  goal: number;
+  years: number;
+  sip: number;
+  date: string;
+};
+
 export default function Home() {
   const [currentCost, setCurrentCost] = useState("");
   const [years, setYears] = useState("");
