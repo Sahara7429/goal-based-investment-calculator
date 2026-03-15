@@ -25,7 +25,7 @@ type HistoryItem = {
 
 export default function Home() {
   const [currentCost, setCurrentCost] = useState("");
-  const [years, setYears] = useState("");
+  const [years, setYears] = useState<string>("");
   const [inflation, setInflation] = useState(6);
   const [returnRate, setReturnRate] = useState(12);
   const [currency, setCurrency] = useState("INR");
@@ -33,8 +33,8 @@ export default function Home() {
   const [futureValue, setFutureValue] = useState<number | null>(null);
   const [sip, setSip] = useState<number | null>(null);
 
-  const [timeline, setTimeline] = useState<any[]>([]);
-  const [history, setHistory] = useState<any[]>([]);
+  const [timeline, setTimeline] = useState<TimelineItem[]>([]);
+const [history, setHistory] = useState<HistoryItem[]>([]);
   const [showHistory, setShowHistory] = useState(false);
 
   const [whatIfSip, setWhatIfSip] = useState("");
